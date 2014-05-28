@@ -1,29 +1,29 @@
 <!doctype html>
 <html lang="en">
 
-	<head>
-		<meta charset="utf-8">
+<head>
+  <meta charset="utf-8">
 
-		<title>Your Title</title>
+  <title>Obfuscated Fizzbuzz</title>
 
-		<meta name="description" content="Your description">
-		<meta name="author" content="Your Name">
+  <meta name="description" content="Your description">
+  <meta name="author" content="Your Name">
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="css/reveal.min.css">
-		<link rel="stylesheet" href="css/theme/default.css" id="theme">
+  <link rel="stylesheet" href="css/reveal.min.css">
+  <link rel="stylesheet" href="css/theme/default.css" id="theme">
 
-		<!-- For syntax highlighting -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+  <!-- For syntax highlighting -->
+  <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
-		<script>
-			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
-		</script>
+  <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+  <script>
+     document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+ </script>
 
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
@@ -36,67 +36,113 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
-                
-<section>
-    <h1>Your Title</h1>
-    <h3>Your sub-title</h3>
-</section>
-<section data-markdown>
-    <script type="text/template">
-        ## Testing Markdown
 
-        This _should_ be __bold__ and this should be a [link](https://github.com/mbrochh/reveal-template).
-
-        ### Heading 3
-
-        * A list
-        * With three
-        * items
-    </script>
-</section>
-<section>
-    <h2>Testing code snippets</h2>
-    <pre><code>
-    import os
-    path = os.path.join('foo', 'bar')
-    def do_something(path):
-        return path
+                <section data-background="14261725311_73f4fb6103_b.jpg">
+                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                    <h1>Obfuscated Fizzbuzz</h1>
+                    <h3>David Watson</h3>
+                </section>
+                <section>
+                        <h1>What is fizzbuzz?</h1>
+                </section>
+                <section data-background="fizzbuzz_book.jpg" data-background-size="340px">
+                <h1>A book</h1>
+                <br><br><br><br><br><br><br><br><br><br>
+                <h3>of Spoken Numeracy Games</h3>
+                <h3>by Janet Rees</h3>
+                    </section>
+                <section>
+                <h1>Co-opted</h1>
+                <h3>into an interview question</h3>
+<pre><code>
+    For the numbers from 1 to 100
+        If the number is evenly divisible by 3 print fizz
+        If the number is evenly divisible by 5 print buzz
+        If the number is evenly divisible by 3 and 5 print fizzbuzz
     </code></pre>
+                        <h3>by Imran Ghory</h3>
+
+                </section>
+                <section data-background="codinghorror-app-icon.png" data-background-size="275px">
+                    <h1>Made popular</h1>
+                    <h3>by Jeff Atwood's</h3>
+                    <br><br><br><br><br><br><br><br>
+                    <h3><em>Coding Horror</em></h3>
+                </section>
+<section>
+<h1>Obfuscated FizzBuzz</h1>
+<h3>Lambdas, closures, nested generator expressions</h3>
+<pre><code style="word-wrap: break-word;">
+print(*((lambda x=x: ''.join(chr(c) for c in (102, 105)) + (2 * chr(122)) + ''.join(chr(c) for c in (98, 117)) + (2 * chr(122)) + '\n' if x % (30 >> 1) == 0 else ''.join(chr(c) for c in (102, 105)) + (2 * chr(122)) + '\n' if x % (6 >> 1) == 0 else ''.join(chr(c) for c in (98, 117)) + (2 * chr(122)) + '\n' if x % (10 >> 1) == 0 else str(x) + '\n')() for x in range(1, 101)))
+</code></pre>
+<h3>In one line of python</h3>
 </section>
 <section>
-    <section data-background="#ff0000" data-markdown>
-        <script type="text/template">
-            ## Testing backgrounds
 
-            Now we are red
-        </script>
-    </section>
-    <section data-background="#00ff00" data-markdown>
-        <script type="text/template">
-            ## Testing backgrounds
-
-            Now we are green
-        </script>
-    </section>
-    <section data-background="#0000ff" data-markdown>
-        <script type="text/template">
-            ## Testing backgrounds
-
-            Now we are blue
-
-            <small>dabadi dabadai...</small>
-        </script>
-    </section>
+<h1>Byzantine FizzBuzz</h1>
+<h3>Less than ten lines of python</h3>
+<pre><code>
+from itertools import chain
+all = list(range(1, 101))
+divisible_by_3 = dict((x, 'Fizz') for x in filter(lambda x: x % 3 == 0, all))
+divisible_by_5 = dict((x, 'Buzz') for x in filter(lambda x: x % 5 == 0, all))
+divisible_by_3_and_5 = dict((x, 'FizzBuzz') for x in
+                            filter(lambda x: x % 3 == 0 and x % 5 == 0, all))
+remainder = dict((x, x) for x in [x for x in all
+                                  if not x in divisible_by_3
+                                  and not x in divisible_by_5
+                                  and not x in divisible_by_3_and_5])
+all_dict = dict(chain(divisible_by_3.items(),
+                      divisible_by_5.items(),
+                      divisible_by_3_and_5.items(),
+                      remainder.items()))
+for x in all:
+    print(all_dict[x])
+</code></pre>
+<h3>Only a crazed discrete math professor could love
 </section>
 
-			</div>
+                <section>
+                    <h1>Canonical Fizzbuzz</h1>
+                    <h3>The simplest thing that could possibly work</h3>
 
-		</div>
+                    <pre><code>
+                        for i in range(1, 101):
+                            if i % 15 == 0:
+                                print('FizzBuzz')
+                            elif i % 3 == 0:
+                                print('Fizz')
+                            elif i % 5 == 0:
+                                print('Buzz')
+                            else:
+                                print(i)
+                    </code></pre>
+                    <h3>Is also susceptible to rote memorization</h3>
+                </section>
+                <section>
+                <h1>All three solutions</h1>
+                <h3>produce expected output and perform similarly</h3>
+                <pre><code style="word-wrap: break-word;">1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 FizzBuzz 16 17 Fizz 19 Buzz Fizz 22 23 Fizz Buzz 26 Fizz 28 29 FizzBuzz 31 32 Fizz 34 Buzz Fizz 37 38 Fizz Buzz 41 Fizz 43 44 FizzBuzz 46 47 Fizz 49 Buzz Fizz 52 53 Fizz Buzz 56 Fizz 58 59 FizzBuzz 61 62 Fizz 64 Buzz Fizz 67 68 Fizz Buzz 71 Fizz 73 74 FizzBuzz 76 77 Fizz 79 Buzz Fizz 82 83 Fizz Buzz 86 Fizz 88 89 FizzBuzz 91 92 Fizz 94 Buzz Fizz 97 98 Fizz Buzz</code></pre> <h3>But the last is easily understood by most coders</h3>
+                </section>
+                <section>
+                Trivial problems deserve canonical solutions.™
+                </section>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.min.js"></script>
+                    <section data-background="14242033776_8268a44e1e_b.jpg">
+    <h3>David Watson</h3>
+     @davidthewatson<br>
+     david@davidwatson.org
+                    </section>
+                </section>
 
-		<script>
+            </div>
+
+        </div>
+
+        <script src="lib/js/head.min.js"></script>
+        <script src="js/reveal.min.js"></script>
+
+        <script>
 
 			// Full list of configuration options available here:
 			// https://github.com/hakimel/reveal.js#configuration
@@ -111,18 +157,18 @@
 
 				// Optional libraries used to extend on reveal.js
 				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+               { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+               { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+               { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+               { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+               { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+               { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 					// { src: 'plugin/search/search.js', async: true, condition: function() { return !!document.body.classList; } }
 					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
-			});
+                    ]
+                });
 
-		</script>
+</script>
 
-	</body>
+</body>
 </html>
